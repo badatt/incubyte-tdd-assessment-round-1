@@ -9,7 +9,7 @@ public class Calculator {
         if(numbers.isEmpty() || numbers.isBlank()) {
             return 0;
         }
-        Optional<Integer> sum = Arrays.stream(numbers.split(","))
+        Optional<Integer> sum = Arrays.stream(numbers.split("[\\n,]"))
                 .map(s -> Integer.parseInt(s.trim()))
                 .reduce(Integer::sum);
         return sum.orElse(0);
